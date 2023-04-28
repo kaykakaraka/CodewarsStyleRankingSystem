@@ -1,0 +1,1 @@
+// Codewars Style Ranking System
