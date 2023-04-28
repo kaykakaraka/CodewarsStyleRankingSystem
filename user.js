@@ -5,7 +5,7 @@ class User {
   }
 
   incProgress(num) {
-
+    this.progress = 3;
   }
 }
 
