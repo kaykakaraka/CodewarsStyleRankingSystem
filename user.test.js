@@ -13,5 +13,7 @@ describe(User,() => {
     expect(user.progress).toEqual(3)
     user.incProgress(-8)
     expect(user.progress).toEqual(6)
+    user.incProgress(-8)
+    expect(user.progress).toEqual(9)
   })
 })
