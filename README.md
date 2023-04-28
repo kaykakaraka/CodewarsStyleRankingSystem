@@ -39,4 +39,15 @@ If a user ranked -1 completes an activity ranked 1 they will receive 10 progress
 `user.progress # => 0 // progress is now zero`
 `user.rank # => -7 // rank was upgraded to -7`
 
+## Design
 
+class User {
+  constructor() {
+    // must have this.rank and this.progress
+  }
+
+  incProgress(num) {
+    // checks num against the.rank and increases this.progrees
+    // if this.progress hits 100 then increases this.rank
+  }
+}
