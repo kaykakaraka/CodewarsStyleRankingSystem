@@ -21,5 +21,7 @@ describe(User,() => {
     const user = new User
     user.incProgress(-7)
     expect(user.progress).toEqual(10)
+    user.incProgress(-7)
+    expect(user.progress).toEqual(20)
   })
 })
