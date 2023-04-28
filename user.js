@@ -1,6 +1,6 @@
 class User {
   constructor() {
-    this.rank = null
+    this.rank = -8
     this.progress = null
   }
 
