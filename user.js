@@ -5,7 +5,11 @@ class User {
   }
 
   incProgress(num) {
-    this.progress += 3;
+    if (num === -8) {
+      this.progress += 3;
+    } else if (num === -7) {
+      this.progress += 10;
+    }
   }
 }
 
