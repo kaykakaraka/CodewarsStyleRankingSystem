@@ -5,19 +5,19 @@ class User {
   }
 
   incProgress(num) {
-    if (num === this.rank) {
-      this.progress += 3
-    } else {
-      this.progress += this.#calcAddition(num)
-    }
+    this.#calcAddition(num)
     if (this.progress >= 100) {
       this.#rankUp()
     }
   }
 
   #calcAddition(num) {
-    let difference = this.rank - num
-    return difference * difference * 10
+    if (num === this.rank) {
+      this.progress += 3
+    } else {
+      let difference = this.rank - num
+      this.progress += difference * difference * 10
+    }
   }
 
   #rankUp() {
