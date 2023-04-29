@@ -45,4 +45,12 @@ describe(User,() => {
     expect(user.progress).toEqual(0)
   })
 
+  it('counts again from zero after ranking up',() => {
+    const user = new User
+    user.incProgress(-5)
+    user.incProgress(-5)
+    expect(user.rank).toEqual(-7)
+    expect(user.progress).toEqual(80)
+  })
+
 })

@@ -10,7 +10,7 @@ class User {
     } else {
       this.progress += this.#calcAddition(num)
     }
-    if (this.progress === 100) {
+    if (this.progress >= 100) {
       this.#rankUp()
     }
   }
@@ -22,7 +22,7 @@ class User {
 
   #rankUp() {
     this.rank = -7
-    this.progress = 0
+    this.progress -= 100
   }
 
 }
