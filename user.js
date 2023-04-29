@@ -20,11 +20,7 @@ class User {
   }
 
   #removeZero(num) {
-    if (num > 0 && this.rank < 0) {
-      return num - 1
-    } else {
-      return num
-    }
+    return num > 0 && this.rank < 0 ? num - 1 : num
   }
 
   #rankUp() {
