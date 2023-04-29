@@ -8,10 +8,13 @@ class User {
     if (num === this.rank) {
       this.progress += 3
     } else {
-      let difference = this.rank - num
-      const addition = difference * difference * 10
-      this.progress += addition
+      this.progress += this.#calcAddition(num)
     }
+  }
+
+  #calcAddition(num) {
+    let difference = this.rank - num
+    return difference * difference * 10
   }
 
 }
