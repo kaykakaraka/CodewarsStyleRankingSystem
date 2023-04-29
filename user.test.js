@@ -61,5 +61,8 @@ describe(User,() => {
     user.incProgress(-4)
     expect(user.rank).toEqual(-6)
     expect(user.progress).toEqual(70)
+    user.incProgress(-4)
+    expect(user.rank).toEqual(-5)
+    expect(user.progress).toEqual(10)
   })
 })
