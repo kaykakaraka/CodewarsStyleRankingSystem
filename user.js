@@ -12,12 +12,12 @@ class User {
   }
 
   #calcAddition(num) {
-    if (num === this.rank) {
-      this.progress += 3
-    } else {
-      let difference = this.rank - num
-      this.progress += difference * difference * 10
-    }
+    num === this.rank ? this.progress += 3 : this.#useFormula(num)
+  }
+
+  #useFormula(num) {
+    let difference = this.rank - num
+    this.progress += difference * difference * 10
   }
 
   #rankUp() {
