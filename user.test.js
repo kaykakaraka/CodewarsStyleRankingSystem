@@ -53,4 +53,13 @@ describe(User,() => {
     expect(user.progress).toEqual(80)
   })
 
+  it('correctly progresses through each level, skipping rank 0',() => {
+    const user = new User
+    user.incProgress(-5)
+    user.incProgress(-5)
+    expect(user.rank).toEqual(-7)
+    user.incProgress(-4)
+    expect(user.rank).toEqual(-6)
+    expect(user.progress).toEqual(70)
+  })
 })

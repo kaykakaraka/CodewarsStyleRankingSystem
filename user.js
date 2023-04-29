@@ -21,8 +21,8 @@ class User {
   }
 
   #rankUp() {
-    this.rank = -7
-    this.progress -= 100
+    this.rank += 1;
+    this.progress -= 100;
   }
 
 }
