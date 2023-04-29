@@ -30,17 +30,20 @@ If a user ranked -8 completes an activity ranked -4 they will receive 160 progre
 If a user ranked -1 completes an activity ranked 1 they will receive 10 progress (remember, zero rank is ignored)
 
 ## Code Usage Examples from CodeWars:
-`var user = new User()`
-`user.rank // => -8`
-`user.progress // => 0`
-`user.incProgress(-7)`
-`user.progress // => 10`
-`user.incProgress(-5) // will add 90 progress`
-`user.progress # => 0 // progress is now zero`
-`user.rank # => -7 // rank was upgraded to -7`
+```
+var user = new User()
+user.rank // => -8
+user.progress // => 0
+user.incProgress(-7)
+user.progress // => 10
+user.incProgress(-5) // will add 90 progress
+user.progress # => 0 // progress is now zero
+user.rank # => -7 // rank was upgraded to -7
+```
 
 ## Design
 
+```
 class User {
   constructor() {
     // must have this.rank and this.progress
@@ -51,3 +54,5 @@ class User {
     // if this.progress hits 100 then increases this.rank
   }
 }
+```
+
