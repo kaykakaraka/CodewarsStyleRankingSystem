@@ -10,11 +10,19 @@ class User {
     } else {
       this.progress += this.#calcAddition(num)
     }
+    if (this.progress === 100) {
+      this.#rankUp()
+    }
   }
 
   #calcAddition(num) {
     let difference = this.rank - num
     return difference * difference * 10
+  }
+
+  #rankUp() {
+    this.rank = -7
+    this.progress = 0
   }
 
 }

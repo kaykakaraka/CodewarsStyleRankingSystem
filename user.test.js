@@ -37,4 +37,12 @@ describe(User,() => {
     expect(user.progress).toEqual(90)
   })
 
+  it('ranks up and resets progress to 0 when 100 progress is reached',() => {
+    const user = new User
+    user.incProgress(-5)
+    user.incProgress(-7)
+    expect(user.rank).toEqual(-7)
+    expect(user.progress).toEqual(0)
+  })
+
 })
