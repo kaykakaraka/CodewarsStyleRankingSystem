@@ -24,4 +24,10 @@ describe(User,() => {
     user.incProgress(-7)
     expect(user.progress).toEqual(20)
   })
+
+  it('increases by 40 when the task completed is of 2 levels above',() => {
+    const user = new User
+    user.incProgress(-6)
+    expect(user.progress).toEqual(40)
+  })
 })
