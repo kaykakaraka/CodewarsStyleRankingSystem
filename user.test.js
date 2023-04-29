@@ -45,6 +45,13 @@ describe(User,() => {
     expect(user.progress).toEqual(0)
   })
 
+  it('increases by 2 ranks when reaching over 200 progress in one go',() => {
+    const user = new User;
+    user.incProgress(-3)
+    expect(user.rank).toEqual(-6)
+    expect(user.progress).toEqual(50)
+  })
+
   it('counts again from zero after ranking up',() => {
     const user = new User
     user.incProgress(-5)

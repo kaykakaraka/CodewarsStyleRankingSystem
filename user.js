@@ -6,9 +6,7 @@ class User {
 
   incProgress(num) {
     this.#calcAddition(num)
-    if (this.progress >= 100) {
-      this.#rankUp()
-    }
+    this.#rankUp()
   }
 
   #calcAddition(num) {
@@ -21,8 +19,12 @@ class User {
   }
 
   #rankUp() {
-    this.rank += 1;
-    this.progress -= 100;
+    if (this.progress >= 100) {
+      this.rank += 1;
+      this.progress -= 100;
+      this.#rankUp()
+    }
+   
   }
 
 }
