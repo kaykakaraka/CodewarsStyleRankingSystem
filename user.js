@@ -5,14 +5,15 @@ class User {
   }
 
   incProgress(num) {
-    if (num === -8) {
-      this.progress += 3;
-    } else if (num === -7) {
-      this.progress += 10;
-    } else if (num === -6) {
-      this.progress += 40
+    if (num === this.rank) {
+      this.progress += 3
+    } else {
+      let difference = this.rank - num
+      const addition = difference * difference * 10
+      this.progress += addition
     }
   }
+
 }
 
 module.exports = User;
