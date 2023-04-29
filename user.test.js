@@ -82,4 +82,11 @@ describe(User,() => {
     expect(user.rank).toEqual(-2)
     expect(user.progress).toEqual(20)
   })
+
+  it('skips rank 0 when calculating progress',() => {
+    const user = new User
+    user.incProgress(1)
+    expect(user.progress).toEqual(40)
+    expect(user.rank).toEqual(-2)
+  })
 })

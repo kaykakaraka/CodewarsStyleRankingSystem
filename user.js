@@ -10,6 +10,7 @@ class User {
   }
 
   #calcAddition(num) {
+    num = this.#removeZero(num)
     num === this.rank ? this.progress += 3 : this.#useFormula(num)
   }
 
@@ -18,13 +19,20 @@ class User {
     this.progress += difference * difference * 10
   }
 
+  #removeZero(num) {
+    if (num > 0 && this.rank < 0) {
+      return num - 1
+    } else {
+      return num
+    }
+  }
+
   #rankUp() {
     if (this.progress >= 100) {
       this.rank += 1;
       this.progress -= 100;
       this.#rankUp()
     }
-   
   }
 
 }
