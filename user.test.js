@@ -54,7 +54,7 @@ describe(User,() => {
     expect(user.progress).toEqual(61)
   })
 
-  it('does not increase progress when the activity completed is two levels below',() => {
+  it('does not increase progress when the activity completed is two levels or more below',() => {
     const user = new User
     user.incProgress(-4)
     expect(user.rank).toEqual(-7)
@@ -62,6 +62,8 @@ describe(User,() => {
     expect(user.rank).toEqual(-5)
     expect(user.progress).toEqual(20)
     user.incProgress(-7)
+    expect(user.progress).toEqual(20)
+    user.incProgress(-8)
     expect(user.progress).toEqual(20)
   })
 
