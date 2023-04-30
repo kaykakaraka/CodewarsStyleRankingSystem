@@ -13,7 +13,7 @@ class User {
   }
 
   #checkForErrors(num) {
-    if (num > 8 || num < -8) {
+    if (num > 8 || num < -8 || num === 0) {
       throw new Error()
     }
   }

@@ -146,7 +146,6 @@ describe(User,() => {
 
   it('sets progress to 0 when you reach rank 8, even if there is additional progress',() => {
     const user = new User
-    // user.incProgress(4)
     while (user.rank < 8) {
       user.incProgress(8)
     }
@@ -161,5 +160,10 @@ describe(User,() => {
   it('throws an error if the rank inserted is below -8',() => {
     const user = new User
     expect(() => user.incProgress(-9)).toThrow(Error)
+  })
+
+  it('throws an error if the rank inserted is 0',() => {
+    const user = new User;
+    expect(() => user.incProgress(0)).toThrow(Error);
   })
 })
