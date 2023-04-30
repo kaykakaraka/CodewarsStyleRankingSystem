@@ -152,4 +152,9 @@ describe(User,() => {
     }
     expect(user.progress).toEqual(0)
   })
+
+  it('throws an error if the rank inserted is above 8',() => {
+    const user = new User
+    expect(() => user.incProgress(9)).toThrow(Error)
+  })
 })

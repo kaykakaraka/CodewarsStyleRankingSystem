@@ -5,6 +5,9 @@ class User {
   }
 
   incProgress(num) {
+    if (num > 8) {
+      throw new Error()
+    }
     if (this.rank < 8) {
       this.#calcAddition(num)
       this.#rankUp()
@@ -44,10 +47,7 @@ class User {
       if (this.rank === 0) {
         this.rank += 1;
       }
-      this.progress -= 100;
-      if (this.rank === 8) {
-        this.progress = 0;
-      }
+      this.rank === 8 ? this.progress = 0: this.progress -= 100;
       this.#rankUp()
     }
   }
