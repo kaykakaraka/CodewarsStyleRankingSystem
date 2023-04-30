@@ -5,16 +5,19 @@ class User {
   }
 
   incProgress(num) {
-    this.#calcAddition(num)
-    this.#rankUp()
+    if (this.rank < 8) {
+      this.#calcAddition(num)
+      this.#rankUp()
+    }
   }
 
   #calcAddition(num) {
-    num = this.#removeZero(num)
-    num <= this.rank ? this.#selectScore(num) : this.#useFormula(num)
+      num = this.#removeZero(num)
+      num <= this.rank ? this.#selectScore(num) : this.#useFormula(num)
   }
 
   #selectScore(num) {
+    num = this.#removeAlternativeZero(num)
     if (num === this.rank) {
       this.progress += 3
     } else if (num === this.rank - 1) {
@@ -29,6 +32,10 @@ class User {
 
   #removeZero(num) {
     return num > 0 && this.rank < 0 ? num - 1 : num
+  }
+
+  #removeAlternativeZero(num) {
+    return num < 0 && this.rank > 0 ? num + 1 : num
   }
 
   #rankUp() {

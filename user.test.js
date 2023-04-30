@@ -123,4 +123,24 @@ describe(User,() => {
     expect(user.rank).toEqual(1)
     expect(user.progress).toEqual(20)
   })
+
+  it('correctly calculate score when rank is 1 and activity is -1',() => {
+    const user = new User
+    user.incProgress(1)
+    user.incProgress(2)
+    user.incProgress(3)
+    user.incProgress(-1)
+    expect(user.progress).toEqual(21)
+  })
+
+  it('does not progress any further once rank is 8',() => {
+    const user = new User
+    user.incProgress(3)
+    while (user.rank < 8) {
+      user.incProgress(8)
+    }
+    user.incProgress(8)
+    expect(user.progress).toEqual(0)
+    expect(user.rank).toEqual(8)
+  })
 })
