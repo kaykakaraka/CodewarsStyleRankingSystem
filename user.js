@@ -11,7 +11,15 @@ class User {
 
   #calcAddition(num) {
     num = this.#removeZero(num)
-    num === this.rank ? this.progress += 3 : this.#useFormula(num)
+    num <= this.rank ? this.#selectScore(num) : this.#useFormula(num)
+  }
+
+  #selectScore(num) {
+    if (num === this.rank) {
+      this.progress += 3
+    } else if (num === this.rank - 1) {
+      this.progress += 1
+    }
   }
 
   #useFormula(num) {
