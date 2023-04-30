@@ -157,4 +157,9 @@ describe(User,() => {
     const user = new User
     expect(() => user.incProgress(9)).toThrow(Error)
   })
+
+  it('throws an error if the rank inserted is below -8',() => {
+    const user = new User
+    expect(() => user.incProgress(-9)).toThrow(Error)
+  })
 })
