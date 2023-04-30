@@ -143,4 +143,13 @@ describe(User,() => {
     expect(user.progress).toEqual(0)
     expect(user.rank).toEqual(8)
   })
+
+  it('sets progress to 0 when you reach rank 8, even if there is additional progress',() => {
+    const user = new User
+    // user.incProgress(4)
+    while (user.rank < 8) {
+      user.incProgress(8)
+    }
+    expect(user.progress).toEqual(0)
+  })
 })

@@ -45,6 +45,9 @@ class User {
         this.rank += 1;
       }
       this.progress -= 100;
+      if (this.rank === 8) {
+        this.progress = 0;
+      }
       this.#rankUp()
     }
   }
