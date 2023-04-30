@@ -54,6 +54,17 @@ describe(User,() => {
     expect(user.progress).toEqual(61)
   })
 
+  it('does not increase progress when the activity completed is two levels below',() => {
+    const user = new User
+    user.incProgress(-4)
+    expect(user.rank).toEqual(-7)
+    user.incProgress(-3)
+    expect(user.rank).toEqual(-5)
+    expect(user.progress).toEqual(20)
+    user.incProgress(-7)
+    expect(user.progress).toEqual(20)
+  })
+
   it('increases by 2 ranks when reaching over 200 progress in one go',() => {
     const user = new User;
     user.incProgress(-3)
