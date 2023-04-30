@@ -5,12 +5,16 @@ class User {
   }
 
   incProgress(num) {
-    if (num > 8) {
-      throw new Error()
-    }
+    this.#checkForErrors(num);
     if (this.rank < 8) {
       this.#calcAddition(num)
       this.#rankUp()
+    }
+  }
+
+  #checkForErrors(num) {
+    if (num > 8) {
+      throw new Error()
     }
   }
 
