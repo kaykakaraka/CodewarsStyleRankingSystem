@@ -26,6 +26,9 @@ class User {
   #rankUp() {
     if (this.progress >= 100) {
       this.rank += 1;
+      if (this.rank === 0) {
+        this.rank += 1;
+      }
       this.progress -= 100;
       this.#rankUp()
     }
